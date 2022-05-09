@@ -1,0 +1,27 @@
+# Windows 10 Installation Steps
+
+  1. Install Vagrant 2.2.9 and VirtualBox 6.0.22
+     - Above versions seem to be the most stable for my Windows 10 environment without much fussing around with errors.
+  2. cd into /vagrant folder and run 'vagrant up'
+
+# Troubleshooting
+
+## It appears your machine doesn't support NFS?
+
+  Run 'vagrant plugin install vagrant-winnfsd'
+
+## Failed to open/create the internal network 'HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter'
+  
+  1. Open Windows Network Connections
+  2. Right click on VirtualBox Host only adapter that created
+  3. Choose properties
+  4. Check "VirtualBox NDIS6 Bridged Networking driver"
+  5. disable and Enable the adapter
+
+## Machine not booting up
+
+  - Is Intel Virtualization turned on in bios?
+  - Is Hyper V turned off in Windows Features?
+  - Hypervisor
+  -- Turn off by runing 'bcdedit /set hypervisorlaunchtype off'
+  -- Turn back on with 'bcdedit /set hypervisorlaunchtype auto'

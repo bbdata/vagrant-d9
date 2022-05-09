@@ -1,0 +1,17 @@
+# Ignore configuration files that may contain sensitive information.
+/public/sites/*/local.settings.php
+/public/sites/*/*services*.yml
+
+# Ignore paths that contain user-generated content.
+/public/sites/*/files
+/public/sites/*/private
+
+# OS-specific files.
+.DS_Store
+
+# Vagrant
+/public/dashboard
+
+# Development paths
+node_modules
+/public/sites/*/libraries/kint
